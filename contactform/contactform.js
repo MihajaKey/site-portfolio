@@ -1,4 +1,4 @@
-jQuery(document).ready(function($) {
+/*jQuery(document).ready(function($) {
   "use strict";
 
   //Contact
@@ -92,7 +92,7 @@ jQuery(document).ready(function($) {
     else var str = $(this).serialize();
     $.ajax({
       type: "POST",
-      url: "contactform/contactform.php",
+      url: "insertData.php",
       data: str,
       success: function(msg) {
         // alert(msg);
@@ -111,4 +111,6 @@ jQuery(document).ready(function($) {
     return false;
   });
 
-});
+});*/
+
+

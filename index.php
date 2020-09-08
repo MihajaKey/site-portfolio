@@ -28,12 +28,7 @@
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-    Theme Name: Reveal
-    Theme URL: https://bootstrapmade.com/reveal-bootstrap-corporate-template/
-    Author: BootstrapMade.com
-    License: https://bootstrapmade.com/license/
-  ======================================================= -->
+
 </head>
 
 <body id="body">
@@ -460,7 +455,8 @@
         <div class="form">
           <div id="sendmessage">Vous message a été envoyer. Merci!</div>
           <div id="errormessage"></div>
-          <form action="" method="post" role="form" class="contactForm">
+          <!--form action="insertData.php" method="post" role="form" class="contactForm"-->
+          <form action="insertData.php" method="post" role="form">
             <div class="form-row">
               <div class="form-group col-md-6">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Votre Nom" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
@@ -476,10 +472,13 @@
               <div class="validation"></div>
             </div>
             <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg=" write something for us" placeholder="Message"></textarea>
+              <textarea class="form-control" name="messages" id="messages" rows="5" data-rule="required" data-msg=" write something for us" placeholder="Message"></textarea>
               <div class="validation"></div>
             </div>
-            <div class="text-center"><button type="submit">Envoyer un message</button></div>
+            <div class="text-center">
+              <!--input type="submit" value="Envoyer" /-->
+              <button type="submit">Envoyer un message</button>
+            </div>
           </form>
         </div>
 
@@ -497,13 +496,6 @@
         &copy; Copyright <strong>Web service</strong>. Tout droit réservé
       </div>
       <div class="credits">
-        <!--
-          All the links in the footer should remain intact.
-          You can delete the links only if you purchased the pro version.
-          Licensing information: https://bootstrapmade.com/license/
-          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Reveal
-        -->
-        <!--Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a-->
       </div>
     </div>
   </footer><!-- #footer -->
@@ -525,7 +517,8 @@
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8HeI8o-c1NppZA-92oYlXakhDPYR7XMY"></script> -->
 
   <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
+  <!--script src="contactform/contactform.js"></script-->
+  <!--script src="contactForm.js"></script-->
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
