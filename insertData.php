@@ -2,7 +2,7 @@
    // echo 'je suis dans insertData';
 
     try{
-        $bdd = new PDO('mysql:host=localhost;dbname=webservice', 'root', '');
+        $bdd = new PDO('mysql:host=localhost;dbname=webservice', 'web_service', 'web_service_site_web');
     }
     catch(Exception $e){
         //die('erruer : ' . );
