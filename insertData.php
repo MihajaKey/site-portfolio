@@ -8,15 +8,15 @@
         //die('erruer : ' . );
         echo $e->getMessage();
     }
-    
+
     $nom = $_POST['name'];
     $mail = $_POST['email'];
     $sujet = $_POST['subject'];
     $messages = $_POST['messages'];
     $id_client="";
-    
+
     // verifie si l'adresse mail du client est déjà enregistré
-    echo $mail;
+    //echo $mail;
     $data_nom = "";
     $res = $bdd->query("SELECT * FROM client WHERE mail='" . $mail . "'");
     while($data = $res->fetch()){
@@ -51,7 +51,7 @@
 
 //enregistrement du message
 
-//header('Location : index.php');
+header('Location:' . $_SERVER['HTTP_REFERER']);
 //exit();
 echo "ok";
 
