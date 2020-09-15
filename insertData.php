@@ -1,6 +1,7 @@
 <?php
    // echo 'je suis dans insertData';
-
+    session_start();  
+    
     try{
         $bdd = new PDO('mysql:host=localhost;dbname=webservice', 'web_service', 'web_service_site_web');
     }
@@ -49,10 +50,17 @@
 
 
 
-//enregistrement du message
+$_SESSION['message_succes'] = true;
+/*
+if($_SESSION['message_succes']){
+    echo 'succes';
+}else{
+    echo 'error';
+}*/
 
 header('Location:' . $_SERVER['HTTP_REFERER']);
 //exit();
-echo "ok";
+
+//echo "ok";
 
 ?>

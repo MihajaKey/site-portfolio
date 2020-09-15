@@ -1,3 +1,9 @@
+<?php  
+     session_start();  
+     $message = "";
+     
+     
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,6 +42,52 @@
   <!--==========================
     Header
   ============================-->
+
+    <div>
+    <button type="button" id="btn-trigger-modal" class="btn btn-primary" data-toggle="modal" data-target="#centralModalSuccess" style="display:none" >
+      Launch static backdrop modal
+    </button>
+    <div class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-notify modal-success" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <p class="heading lead">Envoie avec succès </p>
+        
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                    </button>
+                </div>
+        
+                <!--Body-->
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
+                        <p>Votre message a été bien envoyé.</p>
+                    </div>
+                </div>
+        
+                <!--Footer-->
+                <div class="modal-footer justify-content-center">
+                    <a type="button" class="btn btn-success" data-dismiss="modal">Fermer<i class="fa fa-diamond ml-1"></i></a>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+      </div>
+      
+    <?php 
+    if(!empty($_SESSION['message_succes'])){
+      if($_SESSION['message_succes'] == true ){
+        $message = 'message_envoye';
+       }
+    }
+    $_SESSION['message_succes'] = false;
+    ?>
+    <input type="hidden" id="message_envoye" name=""  value=<?php echo $message ?> >
+
+  </div>
   <header id="header">
     <div class="container">
 
@@ -456,23 +508,23 @@
           <div id="sendmessage">Vous message a été envoyer. Merci!</div>
           <div id="errormessage"></div>
           <!--form action="insertData.php" method="post" role="form" class="contactForm"-->
-          <form action="insertData.php" method="post" role="form">
+          <form action="insertData.php" method="post">
             <div class="form-row">
               <div class="form-group col-md-6">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Votre Nom" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <input type="text" name="name" class="form-control" id="name" placeholder="Votre Nom" required/>
                 <div class="validation"></div>
               </div>
               <div class="form-group col-md-6">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Votre Email" data-rule="email" data-msg="Please enter a valid email" />
+                <input type="email" class="form-control" name="email" id="email" placeholder="Votre Email" required />
                 <div class="validation"></div>
               </div>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Sujet" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Sujet" required/>
               <div class="validation"></div>
             </div>
             <div class="form-group">
-              <textarea class="form-control" name="messages" id="messages" rows="5" data-rule="required" data-msg=" write something for us" placeholder="Message"></textarea>
+              <textarea class="form-control" name="messages" id="messages" rows="5" required data-msg=" write something for us" placeholder="Message"></textarea>
               <div class="validation"></div>
             </div>
             <div class="text-center">
@@ -522,6 +574,13 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+  <script type="text/javascript">
+      
+      if($('#message_envoye').val() == "message_envoye" ){
+        $("#btn-trigger-modal").trigger("click"); 
+      }
+      </script>  
+  <?php $message=""; ?>   
 
 </body>
 </html>
