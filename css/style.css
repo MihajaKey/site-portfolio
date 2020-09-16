@@ -965,6 +965,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 20px;
 }
 
+
 @media (min-width: 768px) {
   #contact .contact-address, #contact .contact-phone, #contact .contact-email {
     padding: 20px 0;
@@ -1020,6 +1021,14 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-weight: 400;
   font-size: 13px;
 }
+/*
+#email_validation{
+  position: absolute;
+  content: "";
+}
+*/
+
+
 
 #contact .form input, #contact .form textarea {
   padding: 10px 14px;

@@ -51,16 +51,7 @@
 
 
 $_SESSION['message_succes'] = true;
-/*
-if($_SESSION['message_succes']){
-    echo 'succes';
-}else{
-    echo 'error';
-}*/
 
 header('Location:' . $_SERVER['HTTP_REFERER']);
-//exit();
-
-//echo "ok";
 
 ?>
