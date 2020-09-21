@@ -49,7 +49,8 @@
 
 
 
-
+setcookie('nom', $nom, time() + 365*24*3600, null, null, false, true);
+setcookie('mail', $mail, time() + 365*24*3600, null, null, false, true);
 $_SESSION['message_succes'] = true;
 
 header('Location:' . $_SERVER['HTTP_REFERER']);
