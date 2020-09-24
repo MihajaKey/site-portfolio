@@ -1,5 +1,6 @@
 {
     "require": {
-        "quickemailverification/quickemailverification": "^1.0"
+        "quickemailverification/quickemailverification": "^1.0",
+        "facebook/graph-sdk": "^5.7"
     }
 }

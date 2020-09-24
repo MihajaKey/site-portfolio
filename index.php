@@ -54,25 +54,25 @@
             <!--Content-->
             <div class="modal-content">
                 <!--Header-->
-                <div class="modal-header">
-                    <p class="heading lead">Envoie avec succès </p>
+                <div class="modal-header" style="text-align: center;background-color: #00c851;">
+                    <p class="heading lead" style="text-align: center;color: white;">Envoie avec succès </p>
         
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" class="white-text">&times;</span>
+                        <span aria-hidden="true" class="white-text" style="white">&times;</span>
                     </button>
                 </div>
         
                 <!--Body-->
                 <div class="modal-body">
                     <div class="text-center">
-                        <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
-                        <p>Votre message a été bien envoyé.</p>
+                        <i class="fa fa-check fa-3x mb-3 animated rotateIn"></i>
+                        <p style="font-size: 14px;">Votre message a été bien envoyé.</p>
                     </div>
                 </div>
         
                 <!--Footer-->
                 <div class="modal-footer justify-content-center">
-                    <a type="button" class="btn btn-success" data-dismiss="modal">Fermer<i class="fa fa-diamond ml-1"></i></a>
+                    <a type="button" class="btn btn-success" style="color: white;" data-dismiss="modal">Fermer</a>
                 </div>
             </div>
             <!--/.Content-->
@@ -424,7 +424,7 @@
           <h2>Notre Equipe</h2>
         </div>
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-4">
             <div class="member">
               <div class="pic"><img src="img/team-3.jpg" alt=""></div>
               <div class="details">
@@ -440,7 +440,7 @@
             </div>
           </div>
 
-          <div class="col-sm-6">
+          <div class="col-sm-4">
             <div class="member">
               <div class="pic"><img src="img/team-4.jpg" alt=""></div>
               <div class="details">
@@ -455,6 +455,20 @@
               </div>
             </div>
           </div>
+          <div class="col-sm-4">
+            <div class="member">
+              <div class="pic"><img src="img/team-4.jpg" alt=""></div>
+              <div class="details">
+                <h4>Gerhild Rafidinjanaharison</h4>
+                <span>Collaborateur</span>
+                <div class="social">
+                  <a href=""><i class="fa fa-twitter"></i></a>
+                  <a href=""><i class="fa fa-facebook"></i></a>
+                  <a href=""><i class="fa fa-google-plus"></i></a>
+                  <a href=""><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
         </div>
         </div>
 
@@ -577,59 +591,8 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
-  <script type="text/javascript">
-      $(document).ready(function(){
-          $('[data-toggle="tooltip"]').tooltip();   
-      });
-
-      if($('#message_envoye').val() == "message_envoye" ){
-        $("#btn-trigger-modal").trigger("click"); 
-      }
-
-      $("#email").blur(function(){
-              //alert("onblur");
-              $.get(
-                  'checkMail.php', // Le fichier cible côté serveur.
-                  {
-                      email : $("#email").val(), 
-                  },
-                  nom_fonction_retour, // Nous renseignons uniquement le nom de la fonction de retour.
-                  'html' // Format des données reçues.
-              );
-
-              function nom_fonction_retour(texte_recu){
-                  if(texte_recu === "Adresse invalide"){
-                    //alert("Adresse invalide");
-                    $("#email_validation").html(`<svg width="1em" color="#ff4444" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
-                    </svg>`);
-                    $('#email_validated').val('error');
-                    $('#email').attr('data-toogle', 'tooltip').attr('data-placement', 'top').attr('data-html','true').attr('title', 'Email invalide');
-                  }else if(texte_recu === "Adresse valide mail safe to send" ){
-                    $("#email_validation").html(`<svg width="1em" color="green" height="1em" viewBox="0 0 16 16" class="bi bi-check-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                    </svg>`);
-                    $('#email_validated').val('success');
-                    //alert("Adresse valide mail safe to send");
-                  }else if(texte_recu === "Adresse inconnue" ){
-                    $("#email_validation").html(`<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                    </svg>`);
-                    $('#email').attr('data-toogle', 'tooltip').attr('data-placement', 'top').attr('tittle', 'Email invalide');
-                    $('#email_validated').val('error');
-                  }
-              }
-
-      });
-
-      $('#btn_validation').click(function(e){
-        if($('#email_validated').val() === "error"){
-          e.preventDefault();
-          alert("mail invalide");
-          $('#email').attr('data-toogle', 'tooltip').attr('data-placement', 'top').attr('title', 'Email invalide');
-        }
-      });
-      </script>  
+  <script type="text/javascript" src="//cookie.eurowebpage.com/cookie.js?skin=cookielaw1&amp;position=bottom&amp;bg_color=131010&amp;link_color=46f989&amp;box_radius=6&amp;delay=12&amp;animation=shake"></script>
+  <script type="text/javascript" src="js/message.js"></script>  
   <?php $message=""; ?>   
 
 </body>
